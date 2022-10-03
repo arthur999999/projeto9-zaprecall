@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
-export default function Footer ({concluied, numCards}) {
+export default function Footer ({concluied, numCards, listIcon}) {
     return(
-        <Footers> {concluied}/{numCards} CONCLUÍDOS</Footers>
+        <Footers><div>{listIcon.map((m, key)=><Icons><span key={key}>{m}</span></Icons>)}</div> {concluied}/{numCards} CONCLUÍDOS</Footers>
     )
 }
 
@@ -27,4 +27,27 @@ const Footers = styled.div`
     gap: 20px;
     align-items: center;
     justify-content: center;
+
+    div{
+        display: flex;
+    }
+
+`
+
+const Icons = styled.div`
+    ion-icon {
+        font-size: 23px;
+    }
+
+    .green {
+        color: #2FBE34;
+    }
+
+    .yellow {
+        color: #FF922E;
+    }
+
+    .red {
+        color: #FF3030;
+    }
 `

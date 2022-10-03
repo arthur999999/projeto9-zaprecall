@@ -6,7 +6,7 @@ import decksLis from "./DecksLis";
 
 
 
-export default function Flashcard({setConcluied, concluied}) {
+export default function Flashcard({setConcluied, concluied, listIcon, setListIcon}) {
     const [clicked, setClicked] = useState(0)
     const [listCard, setListCard] = useState([])
     const [contentFront, setContentFront] = useState([])
@@ -19,12 +19,12 @@ export default function Flashcard({setConcluied, concluied}) {
     return(
         <>
         
-            {decksLis[0].deck.map((m,index)=><><HidePls>
+            {decksLis[0].deck.map((m,index, key)=><><HidePls>
                 
-                <FlashCardFront index ={index} listCard={listCard} setListCard={setListCard} clicked={clicked} setClicked={setClicked} contentFront={contentFront} contentFronIcon={contentFronIcon} contentFronIcon2={contentFronIcon2}/>
+                <FlashCardFront index ={index} key={key} listCard={listCard} setListCard={setListCard} clicked={clicked} setClicked={setClicked} contentFront={contentFront} contentFronIcon={contentFronIcon} contentFronIcon2={contentFronIcon2} />
                 </HidePls>
                 <OpenedCard>
-                    <FlashCardOpen index={index} content={m.Q} content2={m.R} listCard={listCard} setClicked={setClicked} setListCard={setListCard} setContentFront={setContentFront} contentFront={contentFront} setConcluied={setConcluied} concluied={concluied} setContentFronIcon={setContentFronIcon} contentFronIcon={contentFronIcon} setContentFronIcon2={setContentFronIcon2} contentFronIcon2={contentFronIcon2}/>
+                    <FlashCardOpen index={index} key={key} content={m.Q} content2={m.R} listCard={listCard} setClicked={setClicked} setListCard={setListCard} setContentFront={setContentFront} contentFront={contentFront} setConcluied={setConcluied} concluied={concluied} setContentFronIcon={setContentFronIcon} contentFronIcon={contentFronIcon} setContentFronIcon2={setContentFronIcon2} contentFronIcon2={contentFronIcon2} listIcon={listIcon} setListIcon={setListIcon}/>
                 </OpenedCard>
                 <TurnCard></TurnCard>
                 </>

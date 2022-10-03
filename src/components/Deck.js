@@ -2,13 +2,13 @@ import styled from "styled-components"
 import Header from "./Header"
 import Main from "./Main"
 
-export default function Deck ({ setConcluied, concluied}) {
+export default function Deck ({ setConcluied, concluied, setListIcon, listIcon}) {
     return(
         <DeckStyle>
 
         <div className="deck">
             <Header/>
-            <Main  setConcluied={setConcluied} concluied={concluied}/>
+            <Main  setConcluied={setConcluied} concluied={concluied} setListIcon={setListIcon} listIcon={listIcon}/>
         </div>
         </DeckStyle>
     )

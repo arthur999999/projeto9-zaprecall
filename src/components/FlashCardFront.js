@@ -4,6 +4,7 @@ export default function FlashCardFront (props) {
     let contentFron
     if(props.contentFront.includes(props.index)){
         contentFron = <><ion-icon name="close-circle"></ion-icon></>
+        
     }else if(props.contentFronIcon.includes(props.index)){
         contentFron = <><ion-icon name="help-circle"></ion-icon></>
     }else if(props.contentFronIcon2.includes(props.index)){
@@ -43,7 +44,7 @@ export default function FlashCardFront (props) {
     return (
         
 
-            <div onClick={onClickCard} className={classCardFront}><div>Pergunta {props.index + 1}</div>{contentFron}</div>
+            <div onClick={onClickCard}  className={classCardFront}><div>Pergunta {props.index + 1}</div>{contentFron}</div>
         
     )
 }

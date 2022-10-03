@@ -10,7 +10,7 @@ export default function FlashCardOpen (props) {
         setContent(props.content2)
         setIcon('')
         setButtons( <Buttonss >
-           <Buttons setClicked={props.setClicked} setListCard={props.setListCard} setContentFront={props.setContentFront} index={props.index} contentFront={props.contentFront} setConcluied={props.setConcluied} concluied={props.concluied} setContentFronIcon={props.setContentFronIcon} contentFronIcon={props.contentFronIcon} setContentFronIcon2={props.setContentFronIcon2} contentFronIcon2={props.contentFronIcon2}/>
+           <Buttons setClicked={props.setClicked} setListCard={props.setListCard} setContentFront={props.setContentFront} index={props.index} contentFront={props.contentFront} setConcluied={props.setConcluied} concluied={props.concluied} setContentFronIcon={props.setContentFronIcon} contentFronIcon={props.contentFronIcon} setContentFronIcon2={props.setContentFronIcon2} contentFronIcon2={props.contentFronIcon2} listIcon={props.listIcon} setListIcon={props.setListIcon}/>
         </Buttonss>)
 
     }
