@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export default function Footer ({concluied, numCards, listIcon}) {
     return(
-        <Footers><div>{listIcon.map((m, key)=><Icons><span key={key}>{m}</span></Icons>)}</div> {concluied}/{numCards} CONCLUÍDOS</Footers>
+        <Footers><div>{listIcon.map((m, key)=><Icons><span key={key}>{m}</span></Icons>)}</div><div data-identifier="flashcard-counter">{concluied}/{numCards} CONCLUÍDOS</div> </Footers>
     )
 }
 

@@ -28,9 +28,9 @@ export default function Buttons ({setClicked, setListCard, setContentFront, inde
 
     return (
     <div className="buttons">
-        <button onClick={()=> ButtonRed()}>Não <br/> lembrei</button>
-        <button onClick={()=> ButtonYellow()}>Quase não lembrei</button>
-        <button onClick={()=> ButtonGreen()}>Zap!</button>
+        <button onClick={()=> ButtonRed() } data-identifier="forgot-btn">Não <br/> lembrei</button>
+        <button onClick={()=> ButtonYellow()} data-identifier="almost-forgot-btn">Quase não lembrei</button>
+        <button onClick={()=> ButtonGreen()} data-identifier="zap-btn">Zap!</button>
     </div>
     )
 }

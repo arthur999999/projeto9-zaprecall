@@ -17,7 +17,7 @@ export default function Flashcard({setConcluied, concluied, listIcon, setListIco
 
 
     return(
-        <>
+        <div data-identifier="flashcard">
         
             {decksLis[0].deck.map((m,index, key)=><><HidePls>
                 
@@ -31,7 +31,7 @@ export default function Flashcard({setConcluied, concluied, listIcon, setListIco
                 )}
        
         
-        </>
+        </div>
         
         
     )

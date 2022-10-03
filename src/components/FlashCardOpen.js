@@ -17,7 +17,7 @@ export default function FlashCardOpen (props) {
     const [content, setContent] = useState(props.content)
 
     return(
-        <div onClick={()=> turnCard()} className={props.listCard.includes(props.index)? 'open' : 'hiddened'}>{content} {icon}
+        <div onClick={()=> turnCard()} data-identifier="flashcard-turn-btn flashcard-question flashcard-answer" className={props.listCard.includes(props.index)? 'open' : 'hiddened'}>{content} {icon}
         {buttons}
          </div>
     )

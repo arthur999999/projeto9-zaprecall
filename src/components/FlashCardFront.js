@@ -3,12 +3,12 @@
 export default function FlashCardFront (props) {
     let contentFron
     if(props.contentFront.includes(props.index)){
-        contentFron = <><ion-icon name="close-circle"></ion-icon></>
+        contentFron = <><ion-icon data-identifier="flashcard-status" name="close-circle"></ion-icon></>
         
     }else if(props.contentFronIcon.includes(props.index)){
-        contentFron = <><ion-icon name="help-circle"></ion-icon></>
+        contentFron = <><ion-icon data-identifier="flashcard-status" name="help-circle"></ion-icon></>
     }else if(props.contentFronIcon2.includes(props.index)){
-        contentFron = <><ion-icon name="checkmark-circle"></ion-icon></>
+        contentFron = <><ion-icon data-identifier="flashcard-status" name="checkmark-circle"></ion-icon></>
     } else {
         contentFron = <><img src="./assets/img/play-outline-icon.svg" alt="whataa" /></>
     }
@@ -44,7 +44,7 @@ export default function FlashCardFront (props) {
     return (
         
 
-            <div onClick={onClickCard}  className={classCardFront}><div>Pergunta {props.index + 1}</div>{contentFron}</div>
+            <div onClick={onClickCard} data-identifier="flashcard-index-item flashcard-show-btn"  className={classCardFront}><div>Pergunta {props.index + 1}</div>{contentFron}</div>
         
     )
 }
