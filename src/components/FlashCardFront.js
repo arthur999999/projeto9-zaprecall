@@ -26,7 +26,14 @@ export default function FlashCardFront (props) {
     }
 
 
-      
+    let onClickCard 
+    if(props.clicked === 1){
+        onClickCard = false
+    }else if(props.contentFront.includes(props.index) || props.contentFronIcon.includes(props.index) || props.contentFronIcon2.includes(props.index)){
+        onClickCard = false
+    } else {
+        onClickCard = ()=> clickCard()
+    }
     
     function clickCard () {
         props.setListCard([...props.listCard, props.index])
@@ -36,7 +43,7 @@ export default function FlashCardFront (props) {
     return (
         
 
-            <div onClick={props.clicked === 1? '' : ()=> clickCard() } className={classCardFront}><div>Pergunta {props.index + 1}</div>{contentFron}</div>
+            <div onClick={onClickCard} className={classCardFront}><div>Pergunta {props.index + 1}</div>{contentFron}</div>
         
     )
 }

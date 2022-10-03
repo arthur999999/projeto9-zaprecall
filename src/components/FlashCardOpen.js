@@ -29,7 +29,9 @@ const Buttonss = styled.div`
 
         display: flex;
         flex-direction: row;
-        margin-top: 25px;
+        position: absolute;
+        bottom: 0px;
+        margin-bottom: 5px;
     }    
 
     .buttons button:nth-child(1) {
