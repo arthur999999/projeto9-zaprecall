@@ -1,34 +1,30 @@
 import { useState } from "react"
 import styled from 'styled-components';
+import FlashCardFront from "./FlashCardFront";
+import FlashCardOpen from "./FlashCardOpen";
+import decksLis from "./DecksLis";
 
 
-const decksLis = [ {
-    
-    deck: [
-    { Q: 'O que é JSX?', R: 'Uma extensão de linguagem do JavaScript'}, {Q: 'O React é __', R: 'uma biblioteca JavaScript para construção de interfaces'}, {Q: 'Componentes devem iniciar com __', R: 'letra maiúscula'}]
-    }, {deck: [
-        {  Q: 'neymarzito', R: 'gayules'}, {Q: 'apaniii', R: 'whattttt'}
-    ]}
-]
 
-export default function Flashcard() {
+export default function Flashcard({setConcluied, concluied}) {
+    const [clicked, setClicked] = useState(0)
     const [listCard, setListCard] = useState([])
+    const [contentFront, setContentFront] = useState([])
+
     console.log(listCard)
 
-    function openCard (question){
-
-    }
 
     return(
         <>
         
             {decksLis[0].deck.map((m,index)=><><HidePls>
                 
-                <div onClick={()=> setListCard([...listCard, index])} className={listCard.includes(index)? 'hiddened' : ''}><div >Pergunta {index + 1}</div></div>
+                <FlashCardFront index ={index} listCard={listCard} setListCard={setListCard} clicked={clicked} setClicked={setClicked} contentFront={contentFront}/>
                 </HidePls>
                 <OpenedCard>
-                    <div className={listCard.includes(index)? '' : 'hiddened'}>{m.Q}</div>
+                    <FlashCardOpen index={index} content={m.Q} content2={m.R} listCard={listCard} setClicked={setClicked} setListCard={setListCard} setContentFront={setContentFront} contentFront={contentFront} setConcluied={setConcluied} concluied={concluied}/>
                 </OpenedCard>
+                <TurnCard></TurnCard>
                 </>
                 )}
        
@@ -41,22 +37,43 @@ export default function Flashcard() {
    
 }
 
+const TurnCard = styled.div `
+
+`
+
 const OpenedCard = styled.div`
     div.hiddened {
         display: none;
+        
     }
 
-    div {
+    .open {
         min-height: 130px;
         display: flex;
         flex-direction: column;
         background-color: var(--cor-fundo-card);
         cursor: default;
-        padding: 20px 10px;
+        padding: 20px 0px 0px 13px;
         margin-bottom: 10px;
         cursor: pointer;
         font-family: 'Recursive', cursive;
         border-radius: 5px;
+        color: black;
+        position: relative;
+        width: 300px;
+        line-height: 21.6px;
+        
+       
+    }
+
+    img {
+        width: 25px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        cursor: pointer;
     }
 `
 
@@ -65,7 +82,7 @@ div.hiddened {
     display: none;
 }
 
-div {
+.front {
 width: 300px;
 height: 50px;
 display: flex;
@@ -78,6 +95,10 @@ margin: 10px 0px;
 padding: 10px 10px;
 cursor: pointer;
 font-family: 'Recursive', cursive;
+}
+
+img {
+    width: 30px;
 }
 `
 

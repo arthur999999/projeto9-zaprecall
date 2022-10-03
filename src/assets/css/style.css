@@ -39,6 +39,7 @@ body {
   padding: 10px 10px;
   cursor: pointer;
   font-family: 'Recursive', cursive;
+  justify-content: center;
 }
 
 .flashcard.acerto {
