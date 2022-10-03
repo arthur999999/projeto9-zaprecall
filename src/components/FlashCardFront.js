@@ -1,7 +1,32 @@
 
 
 export default function FlashCardFront (props) {
-    const contentFron = props.contentFront.includes(props.index) ? <><img src="./assets/img/close-circle-icon.svg" alt="whataa" /></> : <><img src="./assets/img/play-outline-icon.svg" alt="whataa" /></>
+    let contentFron
+    if(props.contentFront.includes(props.index)){
+        contentFron = <><ion-icon name="close-circle"></ion-icon></>
+    }else if(props.contentFronIcon.includes(props.index)){
+        contentFron = <><ion-icon name="help-circle"></ion-icon></>
+    }else if(props.contentFronIcon2.includes(props.index)){
+        contentFron = <><ion-icon name="checkmark-circle"></ion-icon></>
+    } else {
+        contentFron = <><img src="./assets/img/play-outline-icon.svg" alt="whataa" /></>
+    }
+
+    let classCardFront
+    if(props.listCard.includes(props.index)){
+        classCardFront = 'hiddened'
+    }else if(props.contentFront.includes(props.index)){
+        classCardFront = 'front red'
+    }else if(props.contentFronIcon.includes(props.index)){
+        classCardFront = 'front yellow'
+    }else if(props.contentFronIcon2.includes(props.index)){
+        classCardFront = 'front green'
+    } else {
+        classCardFront = 'front'
+    }
+
+
+      
     
     function clickCard () {
         props.setListCard([...props.listCard, props.index])
@@ -9,6 +34,10 @@ export default function FlashCardFront (props) {
 
     }
     return (
-        <div onClick={props.clicked === 1? '' : ()=> clickCard() } className={props.listCard.includes(props.index)? 'hiddened' : 'front'}><div>Pergunta {props.index + 1}</div>{contentFron}</div>
+        
+
+            <div onClick={props.clicked === 1? '' : ()=> clickCard() } className={classCardFront}><div>Pergunta {props.index + 1}</div>{contentFron}</div>
+        
     )
 }
+
